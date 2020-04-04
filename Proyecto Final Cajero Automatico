@@ -1,0 +1,123 @@
+using System;
+
+namespace PF_Cajero
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            /*Cajero Automatico*/
+
+            int monto, mil, quinientos, doscientos, cien;
+
+            Console.WriteLine("...BIENVENIDO A SU SERVICIO DE CAJERO AUTOMATICO...");
+            Console.ReadKey();
+            Console.Clear();
+
+            Console.Write("Ingrese el monto a retirar:...");
+            monto = int.Parse(Console.ReadLine());
+            Console.Clear();
+
+            if (monto % 5 == 0)
+            {
+                mil = monto / 1000;
+                monto = monto % 1000;
+                quinientos = monto / 500;
+                monto = monto % 500;
+                doscientos = monto / 200;
+                monto = monto % 200;
+                cien = monto / 100;
+                monto = monto % 100;
+
+                Console.WriteLine("El monto en billetes de mil es de: " + mil);
+
+                Console.WriteLine("El monto en billetes de quinientos es de: " + quinientos);
+
+                Console.WriteLine("El monto en billetes de doscientos es de: " + doscientos);
+
+                Console.WriteLine("El monto en billetes de cien es de: " + cien);
+                Console.ReadKey();
+                Console.Clear();
+            }
+            else
+            {
+                Console.Write("MONTO INVALIDO!");
+                Console.ReadKey();
+                Console.Clear();
+                Retiro();
+            }
+            
+           
+
+            int opcion = 0;
+            Console.WriteLine("¿Desea salir del sistema?");
+            Console.WriteLine("1.- Si...  2.- No...");
+            opcion = Convert.ToInt32(Console.ReadLine());
+            Console.Clear();
+
+
+            Console.WriteLine("Digite una opcion: ");
+           
+            switch (opcion)
+            {
+                case 1:
+                    Console.Clear();
+                    Console.WriteLine("Gracias por utilizar su servicio de cajero preferido...");
+                    Console.ReadKey();
+                    Console.Clear();
+                    Console.WriteLine("...HASTA LA PROXIMA...");
+                    Console.ReadKey();
+                    break;
+
+                case 2:
+                    Console.Clear();
+                    Retiro();
+                    break;
+
+            }
+
+
+        }
+
+        public static void Retiro()
+        {
+            Console.Clear();
+            int monto, mil, quinientos, doscientos, cien;
+            Console.Write("Ingrese el monto a retirar:...");
+            monto = int.Parse(Console.ReadLine());
+            Console.Clear();
+
+            if (monto % 5 == 0)
+            {
+                mil = monto / 1000;
+                monto = monto % 1000;
+                quinientos = monto / 500;
+                monto = monto % 500;
+                doscientos = monto / 200;
+                monto = monto % 200;
+                cien = monto / 100;
+                monto = monto % 100;
+
+                Console.WriteLine("El monto en billetes de mil es de: " + mil);
+
+                Console.WriteLine("El monto en billetes de quinientos es de: " + quinientos);
+
+                Console.WriteLine("El monto en billetes de doscientos es de: " + doscientos);
+
+                Console.WriteLine("El monto en billetes de cien es de: " + cien);
+                Console.ReadKey();
+                Console.Clear();
+                Console.WriteLine("Ya esta en el limite de 2 trasacciones por dia. Disculpe los inconvenientes. Vuelva dentro de 24 horas.");
+            }
+            else
+            {
+                Console.Write("MONTO INVALIDO!");
+                Console.WriteLine("Ya esta en el limite de 2 trasacciones por dia. Disculpe los inconvenientes. Vuelva dentro de 24 horas.");
+
+            }
+            Console.ReadKey();
+
+        }
+
+    }
+}
